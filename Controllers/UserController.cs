@@ -1,5 +1,6 @@
 using backendProject.Data.SqlDbContext;
 using backendProject.Models.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P0_ClassLibrary.Interfaces;
@@ -55,9 +56,10 @@ namespace backendProject.Controllers.UserController
             {
                 return BadRequest(new { message = "Password Incorrect !" });
             }
-            var token = tokenService.CreateToken(user.UserId, user.Email, user.Username?? ("unknown"), 60 * 24);
-            return Ok(new { message = "Logged In Sucessfully !",payload = user,token });
+            var token = tokenService.CreateToken(user.UserId, user.Email, user.Username ?? ("unknown"), 60 * 24);
+            return Ok(new { message = "Logged In Sucessfully !", payload = user, token });
 
         }
+
     }
 }

@@ -173,3 +173,4 @@ D:\GIT_LZ\backendProject\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Tex
 D:\GIT_LZ\backendProject\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\GIT_LZ\backendProject\bin\Debug\net8.0\P0_ClassLibrary.dll
 D:\GIT_LZ\backendProject\bin\Debug\net8.0\P0_ClassLibrary.pdb
+D:\GIT_LZ\backendProject\obj\Debug\net8.0\backendProject.sourcelink.json
