@@ -21,8 +21,7 @@ namespace backendProject.Models.JunctionModels
         public Product? Product { get; set; }
 
         public required int Quantity { get; set; } = 1;
-
-
+        public required decimal ProductPrice { get; set; }
         public string? Size { get; set; }
         public string? Color { get; set; }
         public string? Weight { get; set; }

@@ -1,4 +1,4 @@
-namespace backendProject.Types.ProductCategory
+namespace backendProject.Types.Enums
 {
     public enum ProductCategory
     {

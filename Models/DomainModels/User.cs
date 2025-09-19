@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using backendProject.Types.Role;
 
 namespace backendProject.Models.DomainModels

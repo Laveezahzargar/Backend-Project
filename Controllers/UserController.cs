@@ -57,9 +57,32 @@ namespace backendProject.Controllers.UserController
                 return BadRequest(new { message = "Password Incorrect !" });
             }
             var token = tokenService.CreateToken(user.UserId, user.Email, user.Username ?? ("unknown"), 60 * 24);
+            HttpContext.Response.Cookies.Append("Backend_Auth_Token", token, new CookieOptions
+            {
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                HttpOnly = false,
+                Expires = DateTime.Now.AddDays(7)
+            });
             return Ok(new { message = "Logged In Sucessfully !", payload = user, token });
 
         }
+        //by myself
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("Backend_Auth_Token");
+            Response.Cookies.Append("Backend_Auth_Token", "", new CookieOptions
+            {
+                Expires = DateTimeOffset.UtcNow.AddDays(-1),
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict
+            });
+
+            return Ok(new { message = "Logout successful" });
+        }
+
 
     }
 }

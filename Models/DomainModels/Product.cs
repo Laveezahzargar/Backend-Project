@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using backendProject.Models.JunctionModels;
-using backendProject.Types.ProductCategory;
+using backendProject.Types.Enums;
 
 namespace backendProject.Models.DomainModels
 {

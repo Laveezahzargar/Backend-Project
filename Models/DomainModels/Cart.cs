@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using backendProject.Models.JunctionModels;
 
 namespace backendProject.Models.DomainModels
@@ -8,8 +9,10 @@ namespace backendProject.Models.DomainModels
     {
         [Key]
         public Guid CartId { get; set; } = Guid.NewGuid();
-        public required Guid UserId { get; set; }  
+        public required Guid UserId { get; set; }
         [ForeignKey("UserId")]
+        
+        [JsonIgnore]
         public User? Buyer { get; set; } 
 
 
